@@ -1,0 +1,17 @@
+    <mat-card *ngIf="userCridentials$ | async as userCridentials; else reNavigateToLogin">
+        <mat-card-title></mat-card-title>
+        <mat-card-content *ngIf="userCridentials">
+            <p>
+                {{userCridentials.token}}
+            </p>
+            <p>
+
+            </p>
+
+        </mat-card-content>
+    </mat-card>
+
+
+<ng-template #reNavigateToLogin>
+    You have to log in <button type="button" class="btn btn-warning" (click)="backToLogin()">login</button>
+</ng-template>
